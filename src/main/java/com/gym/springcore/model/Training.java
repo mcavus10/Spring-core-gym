@@ -2,6 +2,8 @@ package com.gym.springcore.model;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 public class Training {
     private Trainee trainee;
@@ -9,5 +11,5 @@ public class Training {
     private String trainingName;
     private TrainingType trainingType;
     private int trainingDuration; //minutes
-
+    private LocalDate trainingDate;
 }
