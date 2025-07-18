@@ -1,0 +1,13 @@
+package com.gym.springcore.model;
+
+import lombok.Data;
+
+@Data
+public class Training {
+    private Trainee trainee;
+    private Trainer trainer;
+    private String trainingName;
+    private TrainingType trainingType;
+    private int trainingDuration; //minutes
+
+}
