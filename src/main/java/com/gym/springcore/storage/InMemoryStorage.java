@@ -1,5 +1,6 @@
 package com.gym.springcore.storage;
 
+import com.gym.springcore.model.TrainingType;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -17,5 +18,18 @@ public class InMemoryStorage {
 
     public Map<String,Map<Long,Object>> getStorage(){
         return storage;
+    }
+    public TrainingType findTrainingTypeByName(String name) {
+        Map<Long, Object> trainingTypesMap = storage.get("trainingTypes");
+        if (trainingTypesMap == null || name == null) {
+            return null;
+        }
+        for (Object obj : trainingTypesMap.values()) {
+            TrainingType type = (TrainingType) obj;
+            if (name.equalsIgnoreCase(type.getTrainingTypeName())) {
+                return type;
+            }
+        }
+        return null;
     }
 }

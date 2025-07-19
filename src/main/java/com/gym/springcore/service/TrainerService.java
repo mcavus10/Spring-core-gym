@@ -3,9 +3,10 @@ package com.gym.springcore.service;
 import com.gym.springcore.model.Trainer;
 
 public interface TrainerService {
-    Trainer createTrainer(String name, String username, String password, String specialization);
+
+    Trainer createTrainerProfile(String firstName, String lastName, String specializationName);
+
     Trainer selectTrainerProfile(Long id);
 
-    Trainer updateTrainerProfile(Long id, String firstName, String lastName, Long trainingTypeId, boolean isActive);
-
+    Trainer updateTrainerProfile(Long id, String firstName, String lastName, String specializationName, boolean isActive);
 }
